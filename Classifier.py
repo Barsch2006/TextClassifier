@@ -7,7 +7,7 @@ class Classifier:
     def __init__(self) -> None:
         self.vectorizer = CountVectorizer()
         self.clf = MultinomialNB()
-        self.treshold = 0.5
+        self.treshold = 0.4
 
     def train(self, X: list, Y: list) -> None:
         self.clf.fit(self.vectorizer.fit_transform(X), Y)

@@ -12,7 +12,6 @@ X, Y = initDataInDB(db)
 classifier.train(X,Y)
 
 try:
-    # todo
     @app.post("/predict")
     async def predict(msg):
         try:
@@ -20,7 +19,7 @@ try:
             return { "category": response, "proba": proba, "msg": msg, "error": "" }
         except Exception as err:
             print(err)
-            return { "error": err }
+            return { "error": str(err) }
 
     uvicorn.run(app, host="127.0.0.1", port=1337)
 
