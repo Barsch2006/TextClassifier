@@ -2,6 +2,8 @@ import { Client, Message } from 'discord.js'
 import { ILogger } from '../logger/logger'
 import axios from 'axios'
 
+// This is just a part of an typescript discord bot
+
 export default async (client: Client, logger: ILogger): Promise<void> => {
   client.on('messageCreate', async (msg: Message) => {
     if (msg.mentions.users.has(client.user?.id ?? '')) {
