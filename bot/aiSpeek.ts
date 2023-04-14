@@ -19,26 +19,7 @@ export default async (client: Client): Promise<void> => {
               ]
             })
             return
-          case "question":
-            await msg.channel.send({
-              embeds: [
-                buildResponse(msg, response.data.error, response.data.category, response.data.proba, `Auf diese Frage habe ich leider keine Antwort. Ich bin nur ein einfacher Text-Klassifizierer und meine Antworten sind vorgegeben.`)
-              ]
-            })
-            return
-          case "search":
-            await msg.channel.send({
-              embeds: [
-                buildResponse(msg, response.data.error, response.data.category, response.data.proba, `Ich kann dir nicht helfen, aber versuche meinen Search-Command auszuprobieren, oder frage in einem Forum.`)
-              ]
-            })
-            return
           case "undefined":
-            await msg.channel.send({
-              embeds: [
-                buildResponse(msg, response.data.error, response.data.category, response.data.proba, `Diese Nachricht konnte ich leider nicht eindeutig einordnen.`)
-              ]
-            })
             return
         }
       } catch (error) {
